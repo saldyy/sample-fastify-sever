@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-node-local
+  name: test-node-local
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-node-local
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: test-node-local
+    spec:
+      containers:
+        - image: test-node
+          imagePullPolicy: Never
+          name: my-image
+          resources: {}
+status: {}
